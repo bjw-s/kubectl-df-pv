@@ -6,7 +6,7 @@ require (
 	github.com/jedib0t/go-pretty v4.3.0+incompatible
 	github.com/oklog/run v1.1.0
 	github.com/pkg/errors v0.9.1
-	github.com/sirupsen/logrus v1.8.1
+	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.2.1
 	k8s.io/api v0.19.13
 	k8s.io/apimachinery v0.19.13
