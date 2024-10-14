@@ -113,7 +113,7 @@ clean:
 #.PHONY: release
 # release: export GITHUB_TOKEN = $(shell echo ${GITHUB_TOKEN})
 #release:
-#	curl -sL https://git.io/goreleaser | bash -s -- --rm-dist --config deploy/.goreleaser.yml
+#	curl -sL https://git.io/goreleaser | bash -s -- --config deploy/.goreleaser.yml
 
 .PHONY: all \
 	default \

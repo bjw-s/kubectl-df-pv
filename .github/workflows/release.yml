@@ -27,8 +27,8 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
-          version: latest
-          args: release --rm-dist --config deploy/.goreleaser.yaml
+          version: "~> v2"
+          args: release --config deploy/.goreleaser.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # https://github.com/rajatjindal/krew-release-bot/releases
