@@ -1,6 +1,6 @@
 module github.com/X-dark/kubectl-df-pv
 
-go 1.23
+go 1.23.2
 
 require (
 	github.com/jedib0t/go-pretty v4.3.0+incompatible
