@@ -15,17 +15,17 @@ jobs:
     steps:
       # https://github.com/actions/checkout/releases
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       # https://github.com/actions/setup-go/releases
       - name: Set up Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v5
         with:
-          go-version: 1.16
+          go-version: 1.23.2
       # https://github.com/goreleaser/goreleaser-action/releases
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
+        uses: goreleaser/goreleaser-action@v6
         with:
           version: latest
           args: release --rm-dist --config deploy/.goreleaser.yaml
@@ -36,7 +36,7 @@ jobs:
       # https://github.com/corneliusweig/ketall/blob/v1.3.2/hack/get-all.yaml
       # https://github.com/corneliusweig/ketall/blob/v1.3.2/.github/workflows/ci.yml#L84
       - name: Update new version in krew-index
-        uses: rajatjindal/krew-release-bot@v0.0.40
+        uses: rajatjindal/krew-release-bot@v0.0.46
         with:
           krew_template_file: deploy/krew/df-pv.yaml
 #      -
