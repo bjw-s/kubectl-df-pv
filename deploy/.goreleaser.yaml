@@ -1,10 +1,11 @@
 # Sources:
 # https://github.com/replicatedhq/outdated/blob/v0.3.3/deploy/.goreleaser.yaml
 project_name: kubectl-df-pv
+version: 2
 release:
   github:
-    owner: X-dark
-    name: kubectl-df-pv
+    owner: &githubOwner X-dark
+    name: &githubRepo kubectl-df-pv
 builds:
   - id: df-pv
     goos:
@@ -45,3 +46,14 @@ archives:
       - README*
       - changelog*
       - CHANGELOG*
+krews:
+  - name: df-pv
+    repository:
+      owner: *githubOwner
+      name: *githubRepo
+      token: "{{ .Env.GITHUB_TOKEN }}"
+    commit_msg_template: "Krew plugin update for {{ .ProjectName }} version {{ .Tag }}"
+    homepage: https://github.com/X-dark/kubectl-df-pv
+    short_description: Show disk usage (like unix df) for persistent volumes
+    description: |
+      This plugin emulates Unix style df for persistent volumes.

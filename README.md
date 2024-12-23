@@ -19,9 +19,8 @@ A `kubectl` plugin to see `df` for persistent volumes.
 ### Via Krew
 
 ```shell script
-curl https://krew.sh/df-pv | bash
-# . ~/.bashrc   # run if you use bash shell
-# . ~/.zshrc    # run if you use zsh shell
+krew index add df-pv https://github.com/X-dark/kubectl-df-pv
+krew install df-pv/df-pv
 ```
 
 ## From source

@@ -9,9 +9,12 @@ on:
   push:
     tags: ["*"]
 
+
 jobs:
   create-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       # https://github.com/actions/checkout/releases
       - name: Checkout
@@ -35,10 +38,6 @@ jobs:
       # https://github.com/rajatjindal/kubectl-evict-pod/blob/v0.0.9/.krew.yaml
       # https://github.com/corneliusweig/ketall/blob/v1.3.2/hack/get-all.yaml
       # https://github.com/corneliusweig/ketall/blob/v1.3.2/.github/workflows/ci.yml#L84
-      - name: Update new version in krew-index
-        uses: rajatjindal/krew-release-bot@v0.0.46
-        with:
-          krew_template_file: deploy/krew/df-pv.yaml
 #      -
 #        # https://github.com/actions/setup-go/releases
 #        name: Set up Go
